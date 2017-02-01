@@ -19,5 +19,5 @@ from OnlineChess.veiws import hello
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('^hello/$', hello),
+    url(r'^hello24/$', hello),
 ]
