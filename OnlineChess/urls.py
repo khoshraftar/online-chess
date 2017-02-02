@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from OnlineChess.veiws import hello
-
+from OnlineChess.veiws import index , sign
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello24/$', hello),
+    url(r'^index/$', index),
+    url(r'^signup$',sign)
 ]
