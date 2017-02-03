@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from OnlineChess.veiws import index , sign
+from OnlineChess.veiws import index , sign , activate
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$', index),
-    url(r'^signup$',sign)
+    url(r'^signup$',sign),
+    url(r'^activate$' ,activate)
 ]

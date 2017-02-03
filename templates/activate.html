@@ -2,24 +2,20 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Signup</title>
+        <title>activate</title>
     </head>
     <body>
         <div style="margin: auto; height: 500px; width: 500px; background-color: aliceblue;border: groove">
             <div style="margin:50px 0 0 150px; height: 250px;width: 250px;">
-                <p style="font-family: Rockwell;font-size: x-large">Sign up</p>
-                <form action="/signup" method="POST">
-                    <input style="margin-top: 20px"placeholder="UserName" name="sus"/>
-				    <input style="margin-top: 20px"placeholder="Password" name="spw"/>
-                    <input style="margin-top: 20px"placeholder="Email" name="smail"/>
+                <p style="font-family: Rockwell;font-size: x-large">give activation code</p>
+                <form action="/activate" method="POST">
+                    <input style="margin-top: 20px"placeholder="activation code" name="scode"/>
                     <br/>
                     <input style="margin-top: 20px" type="submit" value="Sign Up">
                 </form>
+                </br>
                 <div>
-                    {% for foo in errors %}
-                        {{ foo }}
-                        </br>
-                    {% endfor %}
+                    {{ result }}
                 </div>
             </div>
 

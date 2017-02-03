@@ -8,16 +8,17 @@
 			<div style="width:1000px; height:1690px; background-color:#DFDFDF; margin-top:10px; float:left;">Rules</div>
 			<div style="width:270px; height:1610px; background-color:#DFDFDF;
 			margin-left:10px; float:right; margin-top:10px;padding-top:80px; padding-left:120px;">
-                <form action="/signup" method="get">
+                <form action="/signup" method="GET">
                     <input type="submit" value="SignUp" style="height:30px;width: 90px;">
                 </form>
 				<div style="margin-top: 200px;">Login</div>
-                <form action="" method="post">
-				    <input style="margin-top: 20px"placeholder="UserName" name="us">
-				    <input style="margin-top: 20px"placeholder="Password" name="pw">
+                <form action="/index/" method="POST">
+				    <input style="margin-top: 20px"placeholder="UserName" name="un">
+				    <input style="margin-top: 20px"placeholder="Password" name="pw" type="password">
                     <br/>
-                    <input style="margin-top: 20px" type="submit">
+                    <input style="margin-top: 20px" type="submit" value="Sign In">
                 </form>
+                <div>{{ errors }}</div>
 			</div>
 		</div>
 	</body>
