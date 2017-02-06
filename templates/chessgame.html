@@ -1,164 +1,239 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
+{% load static %}
 <html>
     <head>
+        <!--
+        <script type="text/javascript" src="{% static "jquery-3.1.1.js" %}"></script>
+        {% load static %}
+        <script type="text/javascript" src="{% static "main.js" %}"></script>-->
         <style>
             .t1{
                 background-color: papayawhip;
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
             }
             .t2{
                 background-color: chocolate;
-                width: 90px;
-                height: 90px;
+                width: 80px;
+                height: 80px;
             }
         </style>
         <title>Chess Game</title>
     </head>
     <body>
+        <div style="margin:20px 50px 0px 40px; font-size: x-large">{{ user }} vs HKH_AI</div>
+        <form style="margin: 10px 50px 0px 40px;" action="/game" method="post">
+            <input type="submit" value="{{ value }}">
+        </form>
         <table style="margin: auto">
             <tr>
-                <td class="t1">
+                <td class="t1" id="td11">
+                    {{ a11 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td12">
+                    {{ a12 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td13">
+                    {{ a13 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td14">
+                    {{ a14 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td15">
+                    {{ a15 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td16">
+                    {{ a16 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td17">
+                    {{ a17 }}
                 </td>
-                <td class="t2">
-                </td>
-            </tr>
-            <tr>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
+                <td class="t2" id="td18">
+                    {{ a18 }}
                 </td>
             </tr>
             <tr>
-                <td class="t1">
+                <td class="t2" id="td21">
+                    {{ a21 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td22">
+                    {{ a22 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td23">
+                    {{ a23 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td24">
+                    {{ a24 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td25">
+                    {{ a25 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td26">
+                    {{ a26 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td27">
+                    {{ a27 }}
                 </td>
-                <td class="t2">
-                </td>
-            </tr>
-            <tr>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-            <tr>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
+                <td class="t1" id="td28">
+                    {{ a28 }}
                 </td>
             </tr>
             <tr>
-                <td class="t2">
+                <td class="t1" id="td31">
+                    {{ a31 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td32">
+                    {{ a32 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td33">
+                    {{ a33 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td34">
+                    {{ a34 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td35">
+                    {{ a35 }}
                 </td>
-                <td class="t1">
+                <td class="t2" id="td36">
+                    {{ a36 }}
                 </td>
-                <td class="t2">
+                <td class="t1" id="td37">
+                    {{ a37 }}
                 </td>
-                <td class="t1">
-                </td>
-            <tr>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
-                </td>
-                <td class="t1">
-                </td>
-                <td class="t2">
+                <td class="t2" id="td38">
+                    {{ a38 }}
                 </td>
             </tr>
             <tr>
-                <td class="t2">
+                <td class="t2" id="td41">
+                    {{ a41 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td42">
+                    {{ a42 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td43">
+                    {{ a43 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td44">
+                    {{ a44 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td45">
+                    {{ a45 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td46">
+                    {{ a46 }}
                 </td>
-                <td class="t2">
+                <td class="t2" id="td47">
+                    {{ a47 }}
                 </td>
-                <td class="t1">
+                <td class="t1" id="td48">
+                    {{ a48 }}
                 </td>
+            </tr>
+            <tr>
+                <td class="t1" id="td51">
+                    {{ a51 }}
+                </td>
+                <td class="t2" id="td52">
+                    {{ a52 }}
+                </td>
+                <td class="t1" id="td53">
+                    {{ a53 }}
+                </td>
+                <td class="t2" id="td54">
+                    {{ a54 }}
+                </td>
+                <td class="t1" id="td55">
+                    {{ a55 }}
+                </td>
+                <td class="t2" id="td56">
+                    {{ a56 }}
+                </td>
+                <td class="t1" id="td57">
+                    {{ a57 }}
+                </td>
+                <td class="t2" id="td58">
+                    {{ a58 }}
+                </td>
+            <tr>
+                <td class="t2" id="td61">
+                    {{ a61 }}
+                </td>
+                <td class="t1" id="td62">
+                    {{ a62 }}
+                </td>
+                <td class="t2" id="td63">
+                    {{ a63 }}
+                </td>
+                <td class="t1" id="td64">
+                    {{ a64 }}
+                </td>
+                <td class="t2" id="td65">
+                    {{ a65 }}
+                </td>
+                <td class="t1" id="td66">
+                    {{ a66 }}
+                </td>
+                <td class="t2" id="td67">
+                    {{ a67 }}
+                </td>
+                <td class="t1" id="td68">
+                    {{ a68 }}
+                </td>
+            </tr>
+            <tr>
+                <td class="t1" id="td71">
+                    {{ a71 }}
+                </td>
+                <td class="t2" id="td72">
+                    {{ a72 }}
+                </td>
+                <td class="t1" id="td73">
+                    {{ a73 }}
+                </td>
+                <td class="t2" id="td74">
+                    {{ a74 }}
+                </td>
+                <td class="t1" id="td75">
+                    {{ a75 }}
+                </td>
+                <td class="t2" id="td76">
+                    {{ a76 }}
+                </td>
+                <td class="t1" id="td77">
+                    {{ a77 }}
+                </td>
+                <td class="t2" id="td78">
+                    {{ a78 }}
+                </td>
+            </tr>
+            <tr>
+                <td class="t2" id="td81">
+                    {{ a81 }}
+                </td>
+                <td class="t1" id="td82">
+                    {{ a82 }}
+                </td>
+                <td class="t2" id="td83">
+                    {{ a83 }}
+                </td>
+                <td class="t1" id="td84">
+                    {{ a84 }}
+                </td>
+                <td class="t2" id="td85">
+                    {{ a85 }}
+                </td>
+                <td class="t1" id="td86">
+                    {{ a86 }}
+                </td>
+                <td class="t2" id="td87">
+                    {{ a87 }}
+                </td>
+                <td class="t1" id="td88">
+                    <img src="{% static "chess/WhiteRook.png" %}" alt="My image"/>
+                </td>
+            </tr>
         </table>
     </body>
 </html>

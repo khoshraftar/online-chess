@@ -16,9 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from OnlineChess.veiws import index , sign , activate
+from OnlineChess.chessgame import game
+from OnlineChess.chessgame import ongame
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$', index),
     url(r'^signup$',sign),
-    url(r'^activate$' ,activate)
+    url(r'^activate$' ,activate),
+    url(r'^game$',game),
+    url(r'^server$', ongame),
 ]
