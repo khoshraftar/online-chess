@@ -43,11 +43,11 @@ def sign(request):
     if(request.method=='POST'):
         errors=[]
         actc=0
-        if(not request.POST.get('sus','')):
-            errors.append('UserName Is Necessary')
-        if(not request.POST.get('spw','')):
-            errors.append('password Is Necessary ')
-        if(not request.POST.get('smail','') or '@' not in request.POST['smail']):
+        if(len(request.POST.get('sus','f'))<4):
+            errors.append('A minimum 4 length UserName Is Necessary')
+        if(len(request.POST.get('spw','f'))<4):
+            errors.append('A minimum 4 length password Is Necessary ')
+        if(not request.POST.get('smail','') or '@' not in request.POST['smail'] or '.' not in request.POST['smail']):
             errors.append('A Valid Email is Necessary')
         tmp=[]
         for i in users.objects.all():
@@ -60,13 +60,13 @@ def sign(request):
                 actc+=ord(i)
             actc=actc%10000
             actc=actc+2016
-            print("<<<<<<<<<<<",actc)
+            print("<<<<<< this is just for test >>>>>>",actc)
             massage='this is your activation code \n' + str(actc)
             addmail=request.POST['smail']
             tmp1=[]
             tmp1.append(addmail)
             a=users(name=str(request.POST['sus']),key=str(request.POST['spw']),email=str(request.POST['smail']),active=False,wins=0,actcode=actc)
-            send_mail('Activation code',massage,'admin@OnlineChess.com', tmp1,fail_silently=False)
+            ##send_mail('Activation code',massage,'admin@OnlineChess.com', tmp1,fail_silently=False)
             a.save()
             request.session['user_name']=a.name
             request.method='GET'

@@ -3,20 +3,21 @@
 {% load static %}
 <html>
     <head>
-        <!--
         <script type="text/javascript" src="{% static "jquery-3.1.1.js" %}"></script>
         {% load static %}
-        <script type="text/javascript" src="{% static "main.js" %}"></script>-->
+        <script type="text/javascript" src="{% static "main.js" %}"></script>
         <style>
             .t1{
                 background-color: papayawhip;
                 width: 80px;
                 height: 80px;
+                border: 3px white solid;
             }
             .t2{
                 background-color: chocolate;
                 width: 80px;
                 height: 80px;
+                border: 3px white solid;
             }
         </style>
         <title>Chess Game</title>
@@ -28,210 +29,218 @@
         </form>
         <table style="margin: auto">
             <tr>
-                <td class="t1" id="td11">
-                    {{ a11 }}
+                {% load static %}
+                <td {{ style11 | safe }} class="t1" id="td11">
+                    {% load static %}
+                    {{ a11 | safe }}
                 </td>
-                <td class="t2" id="td12">
-                    {{ a12 }}
+                <td {{ style12 | safe}} class="t2" id="td12">
+                    {{ a12 | safe}}
                 </td>
-                <td class="t1" id="td13">
-                    {{ a13 }}
+                <td {{ style13 | safe }} class="t1" id="td13">
+                    {% load static %}
+                    {{ a13 | safe}}
                 </td>
-                <td class="t2" id="td14">
-                    {{ a14 }}
+                <td {{ style14 | safe}} class="t2" id="td14">
+                    {% load static %}
+                    {{ a14 | safe}}
                 </td>
-                <td class="t1" id="td15">
-                    {{ a15 }}
+                <td {{ style15 | safe}} class="t1" id="td15">
+                    {% load static %}
+                    {{ a15 | safe}}
                 </td>
-                <td class="t2" id="td16">
-                    {{ a16 }}
+                <td {{ style16 | safe}} class="t2" id="td16">
+                    {% load static %}
+                    {{ a16 | safe}}
                 </td>
-                <td class="t1" id="td17">
-                    {{ a17 }}
+                <td {{ style17 | safe}} class="t1" id="td17">
+                    {% load static %}
+                    {{ a17 | safe}}
                 </td>
-                <td class="t2" id="td18">
-                    {{ a18 }}
-                </td>
-            </tr>
-            <tr>
-                <td class="t2" id="td21">
-                    {{ a21 }}
-                </td>
-                <td class="t1" id="td22">
-                    {{ a22 }}
-                </td>
-                <td class="t2" id="td23">
-                    {{ a23 }}
-                </td>
-                <td class="t1" id="td24">
-                    {{ a24 }}
-                </td>
-                <td class="t2" id="td25">
-                    {{ a25 }}
-                </td>
-                <td class="t1" id="td26">
-                    {{ a26 }}
-                </td>
-                <td class="t2" id="td27">
-                    {{ a27 }}
-                </td>
-                <td class="t1" id="td28">
-                    {{ a28 }}
+                <td {{ style18 | safe}} class="t2" id="td18">
+                    {% load static %}
+                    {{ a18 | safe}}
                 </td>
             </tr>
             <tr>
-                <td class="t1" id="td31">
-                    {{ a31 }}
+                <td {{ style21 | safe}} class="t2" id="td21">
+                    {{ a21 | safe}}
                 </td>
-                <td class="t2" id="td32">
-                    {{ a32 }}
+                <td {{ style22 | safe}} class="t1" id="td22">
+                    {{ a22 | safe}}
                 </td>
-                <td class="t1" id="td33">
-                    {{ a33 }}
+                <td {{ style23 | safe}} class="t2" id="td23">
+                    {{ a23 | safe}}
                 </td>
-                <td class="t2" id="td34">
-                    {{ a34 }}
+                <td {{ style24 | safe}} class="t1" id="td24">
+                    {{ a24 | safe}}
                 </td>
-                <td class="t1" id="td35">
-                    {{ a35 }}
+                <td {{ style25 | safe}} class="t2" id="td25">
+                    {{ a25 | safe}}
                 </td>
-                <td class="t2" id="td36">
-                    {{ a36 }}
+                <td {{ style26 | safe}} class="t1" id="td26">
+                    {{ a26 | safe}}
                 </td>
-                <td class="t1" id="td37">
-                    {{ a37 }}
+                <td {{ style27 | safe}} class="t2" id="td27">
+                    {{ a27 | safe}}
                 </td>
-                <td class="t2" id="td38">
-                    {{ a38 }}
-                </td>
-            </tr>
-            <tr>
-                <td class="t2" id="td41">
-                    {{ a41 }}
-                </td>
-                <td class="t1" id="td42">
-                    {{ a42 }}
-                </td>
-                <td class="t2" id="td43">
-                    {{ a43 }}
-                </td>
-                <td class="t1" id="td44">
-                    {{ a44 }}
-                </td>
-                <td class="t2" id="td45">
-                    {{ a45 }}
-                </td>
-                <td class="t1" id="td46">
-                    {{ a46 }}
-                </td>
-                <td class="t2" id="td47">
-                    {{ a47 }}
-                </td>
-                <td class="t1" id="td48">
-                    {{ a48 }}
+                <td {{ style28 | safe}} class="t1" id="td28">
+                    {{ a28 | safe}}
                 </td>
             </tr>
             <tr>
-                <td class="t1" id="td51">
-                    {{ a51 }}
+                <td {{ style31 | safe}} class="t1" id="td31">
+                    {{ a31 | safe}}
                 </td>
-                <td class="t2" id="td52">
-                    {{ a52 }}
+                <td {{ style32 | safe}} class="t2" id="td32">
+                    {{ a32 | safe}}
                 </td>
-                <td class="t1" id="td53">
-                    {{ a53 }}
+                <td {{ style33 | safe}} class="t1" id="td33">
+                    {{ a33 | safe}}
                 </td>
-                <td class="t2" id="td54">
-                    {{ a54 }}
+                <td {{ style34 | safe}} class="t2" id="td34">
+                    {{ a34 | safe}}
                 </td>
-                <td class="t1" id="td55">
-                    {{ a55 }}
+                <td {{ style35 | safe}} class="t1" id="td35">
+                    {{ a35 | safe}}
                 </td>
-                <td class="t2" id="td56">
-                    {{ a56 }}
+                <td {{ style36 | safe}} class="t2" id="td36">
+                    {{ a36 | safe}}
                 </td>
-                <td class="t1" id="td57">
-                    {{ a57 }}
+                <td {{ style37 | safe}} class="t1" id="td37">
+                    {{ a37 | safe}}
                 </td>
-                <td class="t2" id="td58">
-                    {{ a58 }}
-                </td>
-            <tr>
-                <td class="t2" id="td61">
-                    {{ a61 }}
-                </td>
-                <td class="t1" id="td62">
-                    {{ a62 }}
-                </td>
-                <td class="t2" id="td63">
-                    {{ a63 }}
-                </td>
-                <td class="t1" id="td64">
-                    {{ a64 }}
-                </td>
-                <td class="t2" id="td65">
-                    {{ a65 }}
-                </td>
-                <td class="t1" id="td66">
-                    {{ a66 }}
-                </td>
-                <td class="t2" id="td67">
-                    {{ a67 }}
-                </td>
-                <td class="t1" id="td68">
-                    {{ a68 }}
+                <td {{ style38 | safe}} class="t2" id="td38">
+                    {{ a38 | safe}}
                 </td>
             </tr>
             <tr>
-                <td class="t1" id="td71">
-                    {{ a71 }}
+                <td {{ style41 | safe}} class="t2" id="td41">
+                    {{ a41 | safe}}
                 </td>
-                <td class="t2" id="td72">
-                    {{ a72 }}
+                <td {{ style42 | safe}} class="t1" id="td42">
+                    {{ a42 | safe}}
                 </td>
-                <td class="t1" id="td73">
-                    {{ a73 }}
+                <td {{ style43 | safe}} class="t2" id="td43">
+                    {{ a43 | safe}}
                 </td>
-                <td class="t2" id="td74">
-                    {{ a74 }}
+                <td {{ style44 | safe}} class="t1" id="td44">
+                    {{ a44 | safe}}
                 </td>
-                <td class="t1" id="td75">
-                    {{ a75 }}
+                <td {{ style45 | safe}} class="t2" id="td45">
+                    {{ a45 | safe}}
                 </td>
-                <td class="t2" id="td76">
-                    {{ a76 }}
+                <td {{ style46 | safe}} class="t1" id="td46">
+                    {{ a46 | safe}}
                 </td>
-                <td class="t1" id="td77">
-                    {{ a77 }}
+                <td {{ style47 | safe}} class="t2" id="td47">
+                    {{ a47 | safe}}
                 </td>
-                <td class="t2" id="td78">
-                    {{ a78 }}
+                <td {{ style48 | safe}} class="t1" id="td48">
+                    {{ a48 | safe}}
                 </td>
             </tr>
             <tr>
-                <td class="t2" id="td81">
-                    {{ a81 }}
+                <td {{ style51 | safe}} class="t1" id="td51">
+                    {{ a51 | safe}}
                 </td>
-                <td class="t1" id="td82">
-                    {{ a82 }}
+                <td {{ style52 | safe}} class="t2" id="td52">
+                    {{ a52 | safe}}
                 </td>
-                <td class="t2" id="td83">
-                    {{ a83 }}
+                <td {{ style53 | safe}} class="t1" id="td53">
+                    {{ a53 | safe}}
                 </td>
-                <td class="t1" id="td84">
-                    {{ a84 }}
+                <td {{ style54 | safe}} class="t2" id="td54">
+                    {{ a54 | safe}}
                 </td>
-                <td class="t2" id="td85">
-                    {{ a85 }}
+                <td {{ style55 | safe}} class="t1" id="td55">
+                    {{ a55 | safe}}
                 </td>
-                <td class="t1" id="td86">
-                    {{ a86 }}
+                <td {{ style56 | safe}} class="t2" id="td56">
+                    {{ a56 | safe}}
                 </td>
-                <td class="t2" id="td87">
-                    {{ a87 }}
+                <td {{ style57 | safe}} class="t1" id="td57">
+                    {{ a57 | safe}}
                 </td>
-                <td class="t1" id="td88">
-                    <img src="{% static "chess/WhiteRook.png" %}" alt="My image"/>
+                <td {{ style58 | safe}} class="t2" id="td58">
+                    {{ a58 | safe}}
+                </td>
+            <tr>
+                <td {{ style61 | safe}} class="t2" id="td61">
+                    {{ a61 | safe}}
+                </td>
+                <td {{ style62 | safe}} class="t1" id="td62">
+                    {{ a62 | safe}}
+                </td>
+                <td {{ style63 | safe}} class="t2" id="td63">
+                    {{ a63 | safe}}
+                </td>
+                <td {{ style64 | safe}} class="t1" id="td64">
+                    {{ a64 | safe}}
+                </td>
+                <td {{ style65 | safe}} class="t2" id="td65">
+                    {{ a65 | safe}}
+                </td>
+                <td {{ style66 | safe}} class="t1" id="td66">
+                    {{ a66 | safe}}
+                </td>
+                <td {{ style67 | safe}} class="t2" id="td67">
+                    {{ a67 | safe}}
+                </td>
+                <td {{ style68 | safe}} class="t1" id="td68">
+                    {{ a68 | safe}}
+                </td>
+            </tr>
+            <tr>
+                <td {{ style71 | safe}} class="t1" id="td71">
+                    {{ a71 | safe}}
+                </td>
+                <td {{ style72 | safe}} class="t2" id="td72">
+                    {{ a72 | safe}}
+                </td>
+                <td {{ style73 | safe}} class="t1" id="td73">
+                    {{ a73 | safe}}
+                </td>
+                <td {{ style74 | safe}} class="t2" id="td74">
+                    {{ a74 | safe}}
+                </td>
+                <td {{ style75 | safe}} class="t1" id="td75">
+                    {{ a75 | safe}}
+                </td>
+                <td {{ style76 | safe}} class="t2" id="td76">
+                    {{ a76 | safe}}
+                </td>
+                <td {{ style77 | safe}} class="t1" id="td77">
+                    {{ a77 | safe}}
+                </td>
+                <td {{ style78 | safe}} class="t2" id="td78">
+                    {{ a78 | safe}}
+                </td>
+            </tr>
+            <tr>
+                <td {{ style81 | safe}} class="t2" id="td81">
+                    {{ a81 | safe}}
+                </td>
+                <td {{ style82 | safe}} class="t1" id="td82">
+                    {{ a82 | safe}}
+                </td>
+                <td {{ style83 | safe}} class="t2" id="td83">
+                    {{ a83 | safe}}
+                </td>
+                <td {{ style84 | safe}} class="t1" id="td84">
+                    {{ a84 | safe}}
+                </td>
+                <td {{ style85 | safe}} class="t2" id="td85">
+                    {{ a85 | safe}}
+                </td>
+                <td {{ style86 | safe}} class="t1" id="td86">
+                    {{ a86 | safe}}
+                </td>
+                <td {{ style87 | safe}} class="t2" id="td87">
+                    {{ a87 | safe}}
+                </td>
+                <td {{ style88 | safe}} class="t1" id="td88">
+                    {{ a88 | safe}}
                 </td>
             </tr>
         </table>
