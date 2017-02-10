@@ -2,21 +2,26 @@
 	<head>
 		<title>Online Chess</title>
 	</head>
-	<body bgcolor="#444">
-		<div style="height:2000px; width:1400px; background-color:#444; margin:auto">
-			<div style="width:750px ;height:150px; background-color:#DFDFDF; padding:150px 0px 0px 650px; font-size:28;">Online Chess</div>
-			<div style="width:1000px; height:1690px; background-color:#DFDFDF; margin-top:10px; float:left;">Rules</div>
-			<div style="width:270px; height:1610px; background-color:#DFDFDF;
-			margin-left:10px; float:right; margin-top:10px;padding-top:80px; padding-left:120px;">
+    {% load static %}
+	<body style="background-image:url('{% static "chess_board_pieces_glass_68402_3840x2160.jpg" %} '); background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;" >
+		<div style="height:800px; width:1120px; margin:auto">
+			<div style="opacity:0.93; width:600px ;height:120px; background-color:#DFDFDF; padding:120px 0px 0px 520px; font-size:28 ;">Online Chess</div>
+			<div style="opacity:0.93; width:800px; height:709px; background-color:#DFDFDF; margin-top:8px; float:left;">Rules</div>
+			<div style="opacity:0.93;width:216px; height:644px; background-color:#DFDFDF;
+			margin-left:8px; float:right; margin-top:8px;padding-top:64px; padding-left:96px;">
                 <form action="/signup" method="GET">
-                    <input type="submit" value="SignUp" style="height:30px;width: 90px;">
+                    <input type="submit" value="SignUp" style="height:30px;width: 72px;">
                 </form>
-				<div style="margin-top: 200px;">Login</div>
+				<div style="margin-top: 160px;">Login</div>
                 <form action="/index/" method="POST">
-				    <input style="margin-top: 20px"placeholder="UserName" name="un">
-				    <input style="margin-top: 20px"placeholder="Password" name="pw" type="password">
+				    <input style="margin-top: 16px"placeholder="UserName" name="un">
+				    <input style="margin-top: 16px"placeholder="Password" name="pw" type="password">
                     <br/>
-                    <input style="margin-top: 20px" type="submit" value="Sign In">
+                    <input style="margin-top: 16px" type="submit" value="Sign In">
                 </form>
                 <div>{{ errors }}</div>
 			</div>

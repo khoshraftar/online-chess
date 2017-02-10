@@ -7,13 +7,13 @@
         {% load static %}
         <script type="text/javascript" src="{% static "main.js" %}"></script>
         <style>
-            .t1{
+            .t2{
                 background-color: papayawhip;
                 width: 80px;
                 height: 80px;
                 border: 3px white solid;
             }
-            .t2{
+            .t1{
                 background-color: chocolate;
                 width: 80px;
                 height: 80px;
@@ -23,9 +23,9 @@
         <title>Chess Game</title>
     </head>
     <body>
-        <div style="margin:20px 50px 0px 40px; font-size: x-large">{{ user }} vs HKH_AI</div>
         <form style="margin: 10px 50px 0px 40px;" action="/game" method="post">
-            <input type="submit" value="{{ value }}">
+            <span style="margin:20px 50px 0px 40px; font-size: x-large">{{ user }} vs HKH_AI</span>
+            <input type="{{ type }}" value="start!">
         </form>
         <table style="margin: auto">
             <tr>

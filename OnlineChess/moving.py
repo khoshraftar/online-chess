@@ -359,14 +359,14 @@ def checkt(board, piece):
                     if(board.a[4][piece.x-1]==None):
                         moves.append((piece.x, piece.y - 2))
             else:
-                if(board.a[piece.y-2][piece.x]==None):
+                if(board.a[piece.y-2][piece.x-1]==None):
                     moves.append((piece.x, piece.y - 1))
             if(piece.x<8):
-                if (board.a[piece.y - 2][piece.x] != None and board[piece.y - 2][piece.x][0] != piece.side):
-                    attacks.append((piece.y - 1, piece.x + 1))
+                if (board.a[piece.y - 2][piece.x] != None and board.a[piece.y - 2][piece.x][0] != piece.side):
+                    attacks.append((piece.x + 1,piece.y - 1))
             if(piece.x>1):
-                if (board.a[piece.y - 2][piece.x - 2] != None and board[piece.y - 2][piece.x - 2][0] != piece.side):
-                    attacks.append((piece.y - 1, piece.x - 1))
+                if (board.a[piece.y - 2][piece.x - 2] != None and board.a[piece.y - 2][piece.x - 2][0] != piece.side):
+                    attacks.append(( piece.x - 1,piece.y - 1))
         if (piece.side == 'b'):
             if (piece.y == 2):
                 if(board.a[2][piece.x-1]==None):
@@ -374,12 +374,12 @@ def checkt(board, piece):
                     if(board.a[3][piece.x-1]==None):
                         moves.append((piece.x, piece.y + 2))
             else:
-                if(board.a[piece.y][piece.x]==None):
+                if(board.a[piece.y][piece.x-1]==None):
                     moves.append((piece.x, piece.y + 1))
             if(piece.x<8):
-                if (board.a[piece.y][piece.x] != None and board[piece.y][piece.x][0] != piece.side):
-                    attacks.append((piece.y + 1, piece.x + 1))
+                if (board.a[piece.y][piece.x] != None and board.a[piece.y][piece.x][0] != piece.side):
+                    attacks.append(( piece.x + 1,piece.y + 1))
             if(piece.x>1):
-                if (board.a[piece.y][piece.x - 2] != None and board[piece.y][piece.x - 2][0] != piece.side):
-                    attacks.append((piece.y + 1, piece.x - 1))
+                if (board.a[piece.y][piece.x - 2] != None and board.a[piece.y][piece.x - 2][0] != piece.side):
+                    attacks.append(( piece.x - 1,piece.y + 1))
     return (moves, attacks)
