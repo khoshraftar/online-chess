@@ -1,4 +1,4 @@
-def checkt(board, piece):
+def checkt(board, piece,canR):
     ################################ rook #####################
     if (piece.type == 'rook'):
         moves = []

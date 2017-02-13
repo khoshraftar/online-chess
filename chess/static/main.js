@@ -12,9 +12,6 @@ $(function () {
                 if (data != 0) {
                     $("table").html(data);
                 }
-                else {
-                    alert("No Permission");
-                }
             }
             else {
                 alert("There is a problem in Connecting")
@@ -32,8 +29,7 @@ $(function () {
                         if (data != 0) {
                             $("table").html(data);
                         }
-                        else {
-                            alert("No Permission");
+                        if(data == 0){
                         }
                     }
                     else {
@@ -49,8 +45,7 @@ $(function () {
                         if (data != 0) {
                             $("table").html(data);
                         }
-                        else {
-                            alert("No Permission");
+                        if(data==0){
                         }
                     }
                     else {
@@ -59,9 +54,6 @@ $(function () {
                 });
             }
 
-            if (can != "border: 3px green solid" && can != "border: 3px lawngreen solid") {
-                alert(3);
-            }
         }
         $(this).off('onclick');
     });

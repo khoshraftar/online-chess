@@ -9,5 +9,7 @@ class users(models.Model):
     actcode=models.CharField(max_length=16,default='')
     game=models.CharField(default='',max_length=10000)
     turn=models.CharField(default='w',max_length=1)
+    canrook=models.BooleanField(default=1,max_length=1)
+    opcanrook=models.BooleanField(default=1,max_length=1)
     class Meta:
         ordering=['wins']

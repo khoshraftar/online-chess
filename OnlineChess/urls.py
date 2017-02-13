@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from OnlineChess.veiws import index , sign , activate
+from OnlineChess.veiws import index , sign , activate , ranklist
 from OnlineChess.chessgame import game
 from OnlineChess.chessgame import ongame
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^activate$' ,activate),
     url(r'^game$',game),
     url(r'^server$', ongame),
+    url(r'^rank$',ranklist)
 ]

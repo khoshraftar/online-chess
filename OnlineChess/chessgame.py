@@ -8,7 +8,7 @@ import copy
 from OnlineChess.moving import checkt
 from OnlineChess.gamecondition import *
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from OnlineChess.AI import nextstep
+from OnlineChess.AI import point , nextstep
 def game(request):
     if (request.session.get('user_name', None) == None):
         return HttpResponse("you have not permission please sign in first :D")
@@ -72,7 +72,6 @@ def game(request):
             html = t.render(Context(tmp))
             return HttpResponse(html)
 
-
 def ongame(requset):
     if (requset.method == 'POST'):
         if (requset.POST['javad'][0] == 'f'):
@@ -92,7 +91,7 @@ def ongame(requset):
             tmpp.side = CG.a[y1 - 1][x1 - 1][0]
             if (tmpp.side == 'b'):
                 return HttpResponse("0")
-            help = checkt(CG, tmpp)
+            help = checkt(CG, tmpp,user.canrook)
             hello = {}
             trash = []
             for i in range(len(help[0])):
@@ -103,7 +102,6 @@ def ongame(requset):
                 if (wmatecond(jk) == 'w'):
                     trash.append(i)
             for i in trash:
-                #print(help[0][i])
                 help[0][i]=(0,0)
             trash = []
             for i in range(len(help[1])):
@@ -121,6 +119,16 @@ def ongame(requset):
             for i in help[1]:
                 if(i[0]):
                     hello["style%i%i" % (i[1], i[0])] = "style='border: 3px green solid'"
+            if (wmatecond(CG)):
+                for i in range(8):
+                    for j in range(8):
+                        if (CG.a[i][j] == 'wking1'):
+                            hello["style%i%i" % (i+1,j+1)] = "style='border: 3px red solid'"
+            if(bmatecond(CG)):
+                for i in range(8):
+                    for j in range(8):
+                        if(CG.a[i][j]=='bking1'):
+                            hello["style%i%i" % (i+1,j+1)]="style='border: 3px red solid'"
             for i in range(8):
                 for j in range(8):
                     if (CG.a[i][j] != None):
@@ -184,14 +192,46 @@ def ongame(requset):
             user = users.objects.get(name=requset.session['user_name'])
             CG.a[y1 - 1][x1 - 1] = CG.a[requset.session['y'] - 1][requset.session['x'] - 1]
             CG.a[requset.session['y'] - 1][requset.session['x'] - 1] = None
+            if(CG.a[y1-1][x1-1]=='wking1'):
+                user.canrook=0
+                user.save()
+            if(checkmatecond(CG)=='b'):
+                user.wins=user.wins+1
+                hl=chessboard()
+                user.game=json.dumps(hl.a)
+                user.save()
+                return HttpResponse("your opponent loosed <br/> if U want to paly again press F5")
+            ############## important point <<<<<<<
             bmove=nextstep(CG)
+            if(checkmatecond(CG)=='a'):
+                hl=chessboard()
+                user.game=json.dumps(hl.a)
+                user.save()
+                return HttpResponse("you loosed :D <br/> if U want to play again press F5")
             CG.a[bmove[1][1]-1][bmove[1][0]-1]=CG.a[bmove[0][1]-1][bmove[0][0]-1]
             CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
+            if(CG.a[bmove[1][1]-1][bmove[1][0]-1]=='bking1'):
+                user.opcanrook=0
+                user.save()
             ff = json.dumps(CG.a)
             user.game = ff
             user.save()
             t = get_template('chessgame.html')
             tmp = {}
+            if (wmatecond(CG)):
+                user.canrook=0
+                k=0
+                user.save()
+                for i in range(8):
+                    for j in range(8):
+                        if (CG.a[i][j] == 'wking1'):
+                            tmp["style%i%i" % (i+1,j+1)] = "style='border: 3px red solid'"
+            if(bmatecond(CG)):
+                user.opcanrook=0
+                for i in range(8):
+                    for j in range(8):
+                        if(CG.a[i][j]=='bking1'):
+                            tmp["style%i%i" % (i+1,j+1)]="style='border: 3px red solid'"
             for i in range(8):
                 for j in range(8):
                     if (CG.a[i][j] != None):
@@ -255,7 +295,18 @@ def ongame(requset):
             user = users.objects.get(name=requset.session['user_name'])
             CG.a[y1 - 1][x1 - 1] = CG.a[requset.session['y'] - 1][requset.session['x'] - 1]
             CG.a[requset.session['y'] - 1][requset.session['x'] - 1] = None
+            if(checkmatecond(CG)=='b'):
+                user.wins=user.wins+1
+                hl=chessboard()
+                user.game=json.dumps(hl.a)
+                user.save()
+                return HttpResponse("your opponent loosed:D <br/> if U want to play again press F5")
             bmove=nextstep(CG)
+            if(checkmatecond(CG)=='a'):
+                hl=chessboard()
+                user.game=json.dumps(hl.a)
+                user.save()
+                return HttpResponse("you loosed :D <br/> if U want to play again press F5")
             CG.a[bmove[1][1]-1][bmove[1][0]-1]=CG.a[bmove[0][1]-1][bmove[0][0]-1]
             CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
             ff = json.dumps(CG.a)
@@ -263,6 +314,20 @@ def ongame(requset):
             user.save()
             t = get_template('chessgame.html')
             tmp = {}
+            if (wmatecond(CG)):
+                user.canrook=0
+                user.save()
+                for i in range(8):
+                    for j in range(8):
+                        if (CG.a[i][j] == 'wking1'):
+                            tmp["style%i%i" % (j+1,i+1)] = "style='border: 3px red solid'"
+            if(bmatecond(CG)):
+                user.opcanrook=0
+                user.save()
+                for i in range(8):
+                    for j in range(8):
+                        if(CG.a[i][j]=='bking1'):
+                            tmp["style%i%i" % (j+1,i+1)]="style='border: 3px red solid'"
             for i in range(8):
                 for j in range(8):
                     if (CG.a[i][j] != None):
