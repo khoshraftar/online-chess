@@ -209,7 +209,7 @@ def ongame(requset):
             CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
             if(CG.a[bmove[1][1] - 1][bmove[1][0] - 1][1:len(CG.a[bmove[1][1]-1][bmove[1][0]-1])-1]=='pawn' and bmove[1][1]==8):
                 CG.a[bmove[1][1] - 1][bmove[1][0] - 1]='bqueen1'
-            if(checkmatecond(CG)=='a'):
+            if(checkmatecond(CG)=='w'):
                 hl=chessboard()
                 user.game=json.dumps(hl.a)
                 user.save()
@@ -312,7 +312,7 @@ def ongame(requset):
             CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
             if(CG.a[bmove[1][1] - 1][bmove[1][0] - 1][1:len(CG.a[bmove[1][1]-1][bmove[1][0]-1])-1]=='pawn' and bmove[1][1]==8):
                 CG.a[bmove[1][1] - 1][bmove[1][0] - 1]='bqueen1'
-            if (checkmatecond(CG) == 'a'):
+            if (checkmatecond(CG) == 'w'):
                 hl = chessboard()
                 user.game = json.dumps(hl.a)
                 user.save()

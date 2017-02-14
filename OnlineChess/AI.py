@@ -107,7 +107,7 @@ def point(board):
         a=a-1
     return a
 
-### s harekat check mikone
+### 3 harekat check mikone
 def AI(board, depth,mdepth):
     if (depth >= mdepth):
         return [point(board), (-1, -1)]
