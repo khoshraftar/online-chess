@@ -192,6 +192,8 @@ def ongame(requset):
             user = users.objects.get(name=requset.session['user_name'])
             CG.a[y1 - 1][x1 - 1] = CG.a[requset.session['y'] - 1][requset.session['x'] - 1]
             CG.a[requset.session['y'] - 1][requset.session['x'] - 1] = None
+            if(CG.a[y1 - 1][x1 - 1][1:len(CG.a[y1 -1][x1 -1])-1]=='pawn' and y1==1):
+                CG.a[y1-1][x1-1]='wqueen1'
             if(CG.a[y1-1][x1-1]=='wking1'):
                 user.canrook=0
                 user.save()
@@ -203,13 +205,15 @@ def ongame(requset):
                 return HttpResponse("your opponent loosed <br/> if U want to paly again press F5")
             ############## important point <<<<<<<
             bmove=nextstep(CG)
+            CG.a[bmove[1][1]-1][bmove[1][0]-1]=CG.a[bmove[0][1]-1][bmove[0][0]-1]
+            CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
+            if(CG.a[bmove[1][1] - 1][bmove[1][0] - 1][1:len(CG.a[bmove[1][1]-1][bmove[1][0]-1])-1]=='pawn' and bmove[1][1]==8):
+                CG.a[bmove[1][1] - 1][bmove[1][0] - 1]='bqueen1'
             if(checkmatecond(CG)=='a'):
                 hl=chessboard()
                 user.game=json.dumps(hl.a)
                 user.save()
                 return HttpResponse("you loosed :D <br/> if U want to play again press F5")
-            CG.a[bmove[1][1]-1][bmove[1][0]-1]=CG.a[bmove[0][1]-1][bmove[0][0]-1]
-            CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
             if(CG.a[bmove[1][1]-1][bmove[1][0]-1]=='bking1'):
                 user.opcanrook=0
                 user.save()
@@ -295,6 +299,8 @@ def ongame(requset):
             user = users.objects.get(name=requset.session['user_name'])
             CG.a[y1 - 1][x1 - 1] = CG.a[requset.session['y'] - 1][requset.session['x'] - 1]
             CG.a[requset.session['y'] - 1][requset.session['x'] - 1] = None
+            if(CG.a[y1 - 1][x1 - 1][1:len(CG.a[y1 -1][x1 -1])-1]=='pawn' and y1==1):
+                CG.a[y1-1][x1-1]='wqueen1'
             if(checkmatecond(CG)=='b'):
                 user.wins=user.wins+1
                 hl=chessboard()
@@ -302,13 +308,15 @@ def ongame(requset):
                 user.save()
                 return HttpResponse("your opponent loosed:D <br/> if U want to play again press F5")
             bmove=nextstep(CG)
-            if(checkmatecond(CG)=='a'):
-                hl=chessboard()
-                user.game=json.dumps(hl.a)
-                user.save()
-                return HttpResponse("you loosed :D <br/> if U want to play again press F5")
             CG.a[bmove[1][1]-1][bmove[1][0]-1]=CG.a[bmove[0][1]-1][bmove[0][0]-1]
             CG.a[bmove[0][1]-1][bmove[0][0]-1]=None
+            if(CG.a[bmove[1][1] - 1][bmove[1][0] - 1][1:len(CG.a[bmove[1][1]-1][bmove[1][0]-1])-1]=='pawn' and bmove[1][1]==8):
+                CG.a[bmove[1][1] - 1][bmove[1][0] - 1]='bqueen1'
+            if (checkmatecond(CG) == 'a'):
+                hl = chessboard()
+                user.game = json.dumps(hl.a)
+                user.save()
+                return HttpResponse("you loosed :D <br/> if U want to play again press F5")
             ff = json.dumps(CG.a)
             user.game = ff
             user.save()

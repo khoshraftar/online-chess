@@ -65,7 +65,7 @@ def sign(request):
             tmp1=[]
             tmp1.append(addmail)
             a=users(name=str(request.POST['sus']),key=str(request.POST['spw']),email=str(request.POST['smail']),active=False,wins=0,actcode=actc)
-            send_mail('Activation code',massage,'admin@OnlineChess.com', tmp1,fail_silently=False)
+            #send_mail('Activation code',massage,'admin@OnlineChess.com', tmp1,fail_silently=False)
             a.save()
             request.session['user_name']=a.name
             request.method='GET'

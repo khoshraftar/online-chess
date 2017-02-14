@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^activate$' ,activate),
     url(r'^game$',game),
     url(r'^server$', ongame),
-    url(r'^rank$',ranklist)
+    url(r'^rank$',ranklist),
 ]

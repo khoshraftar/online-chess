@@ -4,8 +4,13 @@
     <head>
         <title>Signup</title>
     </head>
-    <body>
-        <div style="margin: auto; height: 500px; width: 500px; background-color: aliceblue;border: groove">
+    {% load static %}
+    <body style="background-image:url('{% static "signature-pen-1030x686.jpg" %} '); background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+        <div style="opacity:.85;margin: auto; height: 500px; width: 500px;;border: groove">
             <div style="margin:50px 0 0 150px; height: 250px;width: 250px;">
                 <p style="font-family: Rockwell;font-size: x-large">Sign up</p>
                 <form action="/signup" method="POST">

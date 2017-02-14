@@ -107,9 +107,9 @@ def point(board):
         a=a-1
     return a
 
-
-def AI(board, depth):
-    if (depth > 2):
+### s harekat check mikone
+def AI(board, depth,mdepth):
+    if (depth >= mdepth):
         return [point(board), (-1, -1)]
     if (depth % 2 == 0):
         mx = [(-1) * (10 ** 5), (-1, -1)]
@@ -118,7 +118,7 @@ def AI(board, depth):
             boardtmp.a = copy.deepcopy(board.a)
             boardtmp.a[i[1][1] - 1][i[1][0] - 1] = boardtmp.a[i[0][1] - 1][i[0][0] - 1]
             boardtmp.a[i[0][1] - 1][i[0][0] - 1] = None
-            tmp = AI(boardtmp, depth + 1)
+            tmp = AI(boardtmp, depth + 1,mdepth)
             if (tmp[0] > mx[0]):
                 mx[0] = tmp[0]
                 mx[1] = i
@@ -130,7 +130,7 @@ def AI(board, depth):
             boardtmp.a = copy.deepcopy(board.a)
             boardtmp.a[i[1][1] - 1][i[1][0] - 1] = boardtmp.a[i[0][1] - 1][i[0][0] - 1]
             boardtmp.a[i[0][1] - 1][i[0][0] - 1] = None
-            tmp = AI(boardtmp, depth + 1)
+            tmp = AI(boardtmp, depth + 1,mdepth)
             if (tmp[0] < mn[0]):
                 mn[0] = tmp[0]
                 mn[1] = i
@@ -138,4 +138,13 @@ def AI(board, depth):
 
 
 def nextstep(board):
-    return AI(board, 0)[1]
+    count=0
+    for i in range(8):
+        for j in range(8):
+            if(board.a[i][j]!=None):
+                count=count+1
+    if(count>6):
+        return AI(board, 0,2)[1]
+    if(count>4):
+        return AI(board,0,4)[1]
+    return AI(board,0,6)
