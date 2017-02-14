@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccae2c3c-64a8-4b7f-9b47-b94a6b9a1178" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineChess/AI.py" afterPath="$PROJECT_DIR$/OnlineChess/AI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineChess/chessgame.py" afterPath="$PROJECT_DIR$/OnlineChess/chessgame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineChess/moving.py" afterPath="$PROJECT_DIR$/OnlineChess/moving.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineChess/urls.py" afterPath="$PROJECT_DIR$/OnlineChess/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineChess/veiws.py" afterPath="$PROJECT_DIR$/OnlineChess/veiws.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/chessgame.html" afterPath="$PROJECT_DIR$/templates/chessgame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/signup.html" afterPath="$PROJECT_DIR$/templates/signup.html" />
     </list>
     <ignored path="OnlineChess.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +50,7 @@
       <file leaf-file-name="chessgame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlineChess/chessgame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4334">
+            <state relative-caret-position="7678">
               <caret line="359" column="52" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="52" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
@@ -70,7 +62,7 @@
       <file leaf-file-name="moving.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlineChess/moving.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
+            <state relative-caret-position="7656">
               <caret line="348" column="48" selection-start-line="348" selection-start-column="48" selection-end-line="348" selection-end-column="48" />
               <folding />
             </state>
@@ -92,7 +84,7 @@
       <file leaf-file-name="gamecondition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlineChess/gamecondition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1542">
+            <state relative-caret-position="0">
               <caret line="0" column="37" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="37" />
               <folding />
             </state>
@@ -102,7 +94,7 @@
       <file leaf-file-name="AI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlineChess/AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="2354">
               <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -121,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="veiws.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="veiws.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlineChess/veiws.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+            <state relative-caret-position="463">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -133,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
@@ -187,9 +179,9 @@
         <option value="$PROJECT_DIR$/OnlineChess/urls.py" />
         <option value="$PROJECT_DIR$/templates/chessgame.html" />
         <option value="$PROJECT_DIR$/OnlineChess/chessgame.py" />
-        <option value="$PROJECT_DIR$/OnlineChess/veiws.py" />
         <option value="$PROJECT_DIR$/OnlineChess/moving.py" />
         <option value="$PROJECT_DIR$/OnlineChess/AI.py" />
+        <option value="$PROJECT_DIR$/OnlineChess/veiws.py" />
       </list>
     </option>
   </component>
@@ -1007,7 +999,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineChess/moving.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
+        <state relative-caret-position="7656">
           <caret line="348" column="48" selection-start-line="348" selection-start-column="48" selection-end-line="348" selection-end-column="48" />
           <folding />
         </state>
@@ -1015,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineChess/chessgame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4334">
+        <state relative-caret-position="7678">
           <caret line="359" column="52" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="52" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
@@ -1025,25 +1017,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineChess/gamecondition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1542">
+        <state relative-caret-position="0">
           <caret line="0" column="37" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnlineChess/veiws.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OnlineChess/AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="2354">
           <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -1056,6 +1038,16 @@
         <state relative-caret-position="22">
           <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="9" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlineChess/veiws.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
